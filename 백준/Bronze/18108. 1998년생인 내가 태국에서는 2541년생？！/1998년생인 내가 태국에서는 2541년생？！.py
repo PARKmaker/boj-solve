@@ -1,0 +1,4 @@
+# a = input().strip()
+a = int(input())
+
+print(a-543)
