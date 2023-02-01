@@ -8,31 +8,25 @@ for i in range(m):
   adj[x].append(y)
   adj[y].append(x)
 
-for i in range(n):
-  adj[i].sort()
-
 visited = [False for i in range(n)]
-ans = 0
+
 def dfs(i, depth):
   global ans
-  visited[i] = True
 
   if depth == 4:
-    ans = 1
-    return
+    print(1)
+    sys.exit()
   
   for x in adj[i]:
     if visited[x]:
       continue
-    
+    visited[i] = True
     dfs(x, depth+1)
     visited[x] = False
 
 for i in range(n):
+  visited[i] = True
   dfs(i,0)
   visited[i] = False
 
-  if ans:
-    break
-
-print(ans)
+print(0)
